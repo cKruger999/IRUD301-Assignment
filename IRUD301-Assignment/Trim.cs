@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 //Product
 namespace IRUD301_Assignment
 {
-    interface Trim
+    public interface Trim
     {
     }
-    class CarTrim : Trim
+    public class CarTrim : Trim
     {
 
     }
-    class MinibusTrim : Trim
+    public class MinibusTrim : Trim
     {
 
     }

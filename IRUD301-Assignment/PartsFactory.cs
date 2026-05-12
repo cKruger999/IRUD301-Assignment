@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 // Abstract Factory
 namespace IRUD301_Assignment
 {
-    interface PartsFactory
+    public abstract class PartsFactory
     {
     }
 }
