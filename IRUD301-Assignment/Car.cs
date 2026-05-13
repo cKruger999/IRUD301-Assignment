@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 //Concrete Product
 namespace IRUD301_Assignment
 {
-    internal class Car : Automobile
+    public class Car : Automobile
     {
+        public Car(Chassis chassis, Shell shell, List<Wheel> wheels, Trim trim) : base(chassis, shell, wheels, trim)
+        {
+            
+        }
+        
     }
+    
 }

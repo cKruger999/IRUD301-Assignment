@@ -3,10 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 //Receiver and Concrete Creator
 namespace IRUD301_Assignment
 {
-    internal class MinibusAssemblyLine : AssemblyLine
+    public class MinibusAssemblyLine : AssemblyLine
     {
+        public MinibusAssemblyLine(PartsFactory partsFactory) : base(partsFactory)
+        {
+           
+        }
+        public override Automobile AssembleAutomobile()
+        {
+            //requests parts from abstract factory method
+            Chassis myChassis = _partsFactory.CreateChassis();
+            Shell myShell = _partsFactory.CreateShell();
+            List<Wheel> myWheels = new List<Wheel>();
+            for(int i = 0; i < 4; i++)
+            {
+                myWheels.Add(_partsFactory.CreateWheel());
+            }
+            Trim myTrim = _partsFactory.CreateTrim();
+            Minibus finishedMinibus = new Minibus(myChassis, myShell, myWheels, myTrim);
+            
+            Thread.Sleep(3000);
+
+            return finishedMinibus;
+        }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 //Product
 namespace IRUD301_Assignment
 {
-    interface Shell
+    public interface Shell
     {
     }
-    class CarShell : Shell
+    public class CarShell : Shell
     {
 
     }
-    class MinibusShell : Shell
+    public class MinibusShell : Shell
     {
 
     }
