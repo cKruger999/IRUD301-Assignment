@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 //Product
 namespace IRUD301_Assignment
 {
-    public interface Chassis
+    public interface IShell
     {
-        
     }
-    public class CarChasis : Chassis
+    public class CarShell : IShell
     {
-        
+
     }
-    public class MinibusChasis : Chassis
+    public class MinibusShell : IShell
     {
-        
+
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 // Abstract Factory
 namespace IRUD301_Assignment
 {
-    public abstract class PartsFactory
+    public interface IPartsFactory
     {
+        IChassis CreateChassis();
+        IShell CreateShell();
+        IWheel CreateWheel();
+        ITrim CreateTrim();
     }
 }

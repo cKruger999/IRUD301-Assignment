@@ -8,7 +8,7 @@ namespace IRUD301_Assignment
 {
     public class Minibus : Automobile
     {
-        public Minibus(Chassis chassis, Shell shell, List<Wheel> wheels, Trim trim) : base(chassis, shell, wheels, trim)
+        public Minibus(IChassis chassis, IShell shell, List<IWheel> wheels, ITrim trim) : base(chassis, shell, wheels, trim)
         {
 
         }

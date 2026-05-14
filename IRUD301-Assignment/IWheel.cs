@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 //Product
 namespace IRUD301_Assignment
 {
-    public interface Wheel
+    public interface IWheel
     {
     }
-    public class CarWheel : Wheel
+    public class CarWheel : IWheel
     {
 
     }
-    public class MinibusWheel : Wheel
+    public class MinibusWheel : IWheel
     {
 
     }

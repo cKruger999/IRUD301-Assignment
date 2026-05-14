@@ -10,12 +10,12 @@ namespace IRUD301_Assignment
     {
         public string Colour { get; set; }
 
-        protected Chassis chassis;
-        protected Shell shell;
-        protected List<Wheel> wheels;
-        protected Trim trim;
+        protected IChassis chassis;
+        protected IShell shell;
+        protected List<IWheel> wheels;
+        protected ITrim trim;
 
-        public Automobile( Chassis c, Shell s, List<Wheel> w, Trim t )
+        public Automobile( IChassis c, IShell s, List<IWheel> w, ITrim t )
         {
             this.chassis = c;
             this.shell = s;
