@@ -9,36 +9,34 @@ namespace IRUD301_Assignment
 {
     internal class CarPartsFactory : IPartsFactory
     {
-        public event Action<string> OnStatusUpdate;
-
         public IChassis CreateChassis()
         {
-            OnStatusUpdate?.Invoke("Building car chassis");
+            Console.WriteLine("Building car chassis");
             Thread.Sleep(2000);
-            OnStatusUpdate?.Invoke("Car chassis completed");
+            Console.WriteLine("Car chassis completed");
             return new CarChassis();
         }
 
         public IShell CreateShell()
         {
-            OnStatusUpdate?.Invoke("Building Car shell");
+            Console.WriteLine("Building Car shell");
             Thread.Sleep(2000);
-            OnStatusUpdate?.Invoke("Car shell completed");
+            Console.WriteLine("Car shell completed");
             return new CarShell();
         }
         public IWheel CreateWheel()
         {
-            OnStatusUpdate?.Invoke("Building Car wheel");
+            Console.WriteLine("Building Car wheel");
             Thread.Sleep(500);
-            OnStatusUpdate?.Invoke("Car wheel completed");
+            Console.WriteLine("Car wheel completed");
             return new CarWheel();
         }
 
         public ITrim CreateTrim()
         {
-            OnStatusUpdate?.Invoke("Building Car trim");
+            Console.WriteLine("Building Car trim");
             Thread.Sleep(1000);
-            OnStatusUpdate?.Invoke("Car trim completed");
+            Console.WriteLine("Car trim completed");
             return new CarTrim();
         }
     }
