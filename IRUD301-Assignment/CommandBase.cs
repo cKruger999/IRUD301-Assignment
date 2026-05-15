@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 //CommandBase
 namespace IRUD301_Assignment
 {
-    interface CommandBase
+    public abstract class CommandBase
     {
+        public abstract void Execute();
     }
 }
