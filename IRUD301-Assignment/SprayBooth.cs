@@ -8,5 +8,6 @@ namespace IRUD301_Assignment
 {
     internal class SprayBooth
     {
+
     }
 }

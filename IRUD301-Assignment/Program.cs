@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace IRUD301_Assignment
 {
-    public class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            MainForm form = new MainForm();
-            form.Show();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }
