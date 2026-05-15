@@ -8,5 +8,6 @@ namespace IRUD301_Assignment
 {
     public abstract class PartsFactory
     {
+
     }
 }
