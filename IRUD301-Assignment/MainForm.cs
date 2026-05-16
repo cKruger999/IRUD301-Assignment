@@ -27,6 +27,8 @@ namespace IRUD301_Assignment
         {
             InitializeComponent();
 
+            btnOrder.Click += btnOrder_Click;
+
             // Initialize the background system when the form loads
             _hq = new CorporateHQ();
             _carLine = new CarAssemblyLine(new CarPartsFactory());
@@ -41,7 +43,14 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackLUX1000.Checked ? "Black" : "White";
 
-                CommandBase newCarOrder = new BuildCarCommand(_carLine, selectedColour);
+                // CHANGED HERE: We now pass the UI update lambda AND the completion method
+                CommandBase newCarOrder = new BuildCarCommand(
+                    _carLine,
+                    selectedColour,
+                    (status) => UpdateUIThreadSafe(lblCarStatus, status), // Updates the status label
+                    () => VehicleCompleted("Car")                         // Triggers when the command finishes
+                );
+
                 _hq.PlaceCarOrder(newCarOrder);
 
                 // Update Counters & UI
@@ -53,7 +62,14 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackMV500.Checked ? "Black" : "White";
 
-                CommandBase newMinibusOrder = new BuildMinibusCommand(_minibusLine, selectedColour);
+                // CHANGED HERE: We now pass the UI update lambda AND the completion method
+                CommandBase newMinibusOrder = new BuildMinibusCommand(
+                    _minibusLine,
+                    selectedColour,
+                    (status) => UpdateUIThreadSafe(lblMinibusStatus, status), // Updates the status label
+                    () => VehicleCompleted("Minibus")                         // Triggers when the command finishes
+                );
+
                 _hq.PlaceMinibusOrder(newMinibusOrder);
 
                 // Update Counters & UI

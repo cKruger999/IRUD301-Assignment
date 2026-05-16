@@ -98,7 +98,7 @@
             // lblCarQueue
             // 
             this.lblCarQueue.AutoSize = true;
-            this.lblCarQueue.Location = new System.Drawing.Point(315, 157);
+            this.lblCarQueue.Location = new System.Drawing.Point(250, 157);
             this.lblCarQueue.Name = "lblCarQueue";
             this.lblCarQueue.Size = new System.Drawing.Size(55, 13);
             this.lblCarQueue.TabIndex = 5;
@@ -107,7 +107,7 @@
             // lblMinibusQueue
             // 
             this.lblMinibusQueue.AutoSize = true;
-            this.lblMinibusQueue.Location = new System.Drawing.Point(499, 157);
+            this.lblMinibusQueue.Location = new System.Drawing.Point(468, 157);
             this.lblMinibusQueue.Name = "lblMinibusQueue";
             this.lblMinibusQueue.Size = new System.Drawing.Size(75, 13);
             this.lblMinibusQueue.TabIndex = 6;
@@ -116,7 +116,7 @@
             // lblCarsCompleted
             // 
             this.lblCarsCompleted.AutoSize = true;
-            this.lblCarsCompleted.Location = new System.Drawing.Point(292, 62);
+            this.lblCarsCompleted.Location = new System.Drawing.Point(250, 62);
             this.lblCarsCompleted.Name = "lblCarsCompleted";
             this.lblCarsCompleted.Size = new System.Drawing.Size(78, 13);
             this.lblCarsCompleted.TabIndex = 7;
@@ -125,7 +125,7 @@
             // lblMinibusesCompleted
             // 
             this.lblMinibusesCompleted.AutoSize = true;
-            this.lblMinibusesCompleted.Location = new System.Drawing.Point(499, 62);
+            this.lblMinibusesCompleted.Location = new System.Drawing.Point(468, 60);
             this.lblMinibusesCompleted.Name = "lblMinibusesCompleted";
             this.lblMinibusesCompleted.Size = new System.Drawing.Size(104, 13);
             this.lblMinibusesCompleted.TabIndex = 8;
@@ -134,7 +134,7 @@
             // lblSprayboothStatus
             // 
             this.lblSprayboothStatus.AutoSize = true;
-            this.lblSprayboothStatus.Location = new System.Drawing.Point(385, 341);
+            this.lblSprayboothStatus.Location = new System.Drawing.Point(326, 339);
             this.lblSprayboothStatus.Name = "lblSprayboothStatus";
             this.lblSprayboothStatus.Size = new System.Drawing.Size(91, 13);
             this.lblSprayboothStatus.TabIndex = 9;
@@ -143,7 +143,7 @@
             // lblMinibusStatus
             // 
             this.lblMinibusStatus.AutoSize = true;
-            this.lblMinibusStatus.Location = new System.Drawing.Point(499, 260);
+            this.lblMinibusStatus.Location = new System.Drawing.Point(468, 260);
             this.lblMinibusStatus.Name = "lblMinibusStatus";
             this.lblMinibusStatus.Size = new System.Drawing.Size(73, 13);
             this.lblMinibusStatus.TabIndex = 10;
@@ -152,7 +152,7 @@
             // lblCarStatus
             // 
             this.lblCarStatus.AutoSize = true;
-            this.lblCarStatus.Location = new System.Drawing.Point(317, 260);
+            this.lblCarStatus.Location = new System.Drawing.Point(250, 260);
             this.lblCarStatus.Name = "lblCarStatus";
             this.lblCarStatus.Size = new System.Drawing.Size(53, 13);
             this.lblCarStatus.TabIndex = 11;
