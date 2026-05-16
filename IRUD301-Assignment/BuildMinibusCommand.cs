@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 //Concrete Command
 namespace IRUD301_Assignment
 {
-    internal class BuildMinibusCommand : CommandBase
+    public class BuildMinibusCommand : CommandBase
     {
+        private MinibusAssemblyLine _assemblyLine;
+
+        private string _colour;
+        public BuildMinibusCommand(MinibusAssemblyLine assemblyLine, string colour)
+        {
+            _assemblyLine = assemblyLine;
+            _colour = colour;
+        }
+
+        public override void Execute()
+        {
+            _assemblyLine.ProcessOrder(_colour);
+        }
+
     }
 }

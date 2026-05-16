@@ -13,19 +13,24 @@ namespace IRUD301_Assignment
         {
             _partsFactory = partsFactory;
         }
-        public Automobile ProcessOrder(string colour)
+        public Automobile ProcessOrder(string colour, Action<string> updateUI)
         {
-            Automobile automobile = AssembleAutomobile();
+            Automobile automobile = AssembleAutomobile(colour, updateUI);
 
+            
             automobile.Colour = colour;
             //Singleton
+            updateUI("Sent to Spraybooth");
             SprayBooth booth = SprayBooth.GetInstance();
             //Singleton method...
             booth.Paint(automobile, colour);
 
+            updateUI("Idle");
+
             return automobile;
+            
         }
-        public abstract Automobile AssembleAutomobile();
+        public abstract Automobile AssembleAutomobile(string colour, Action<string> updateUI);
         
     }
 }
