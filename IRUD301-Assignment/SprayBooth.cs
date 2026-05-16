@@ -14,6 +14,8 @@ namespace IRUD301_Assignment
         private static SprayBooth _instance;
         private static object _lockThis = new object();
         private static object _paintLock = new object(); // ensures one Paint() Method at a time
+
+        private SprayBooth() { }
         public static SprayBooth GetInstance()
         {
             if (_instance == null)
