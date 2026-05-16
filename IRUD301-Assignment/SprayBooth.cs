@@ -16,12 +16,11 @@ namespace IRUD301_Assignment
 
         public static SprayBooth GetInstance()
         {
-            // Only take the lock if it's null
             if (_instance == null)
             {
                 lock (_lockThis)
                 {
-                    // Check again inside the lock just in case another thread snuck in
+                    
                     if (_instance == null)
                     {
                         _instance = new SprayBooth();
@@ -31,9 +30,21 @@ namespace IRUD301_Assignment
             return _instance;
         }
 
-        public void Paint(Automobile automobile, string colour)
+        public void Paint(Automobile automobile, string colour, Action<string> updateUI)
         {
-            Thread.Sleep(3000);
+            if (automobile is Car)
+            {
+                updateUI($"Spraying {colour} LUX1000");
+                Thread.Sleep(5000);
+            }
+            else
+            {
+                updateUI($"Spraying {colour} MV500");
+                Thread.Sleep(7000);
+            }
+
+            automobile.Colour = colour;
+            updateUI("Idle");
         }
     }
 }

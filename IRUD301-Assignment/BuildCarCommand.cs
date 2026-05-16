@@ -11,20 +11,22 @@ namespace IRUD301_Assignment
         private CarAssemblyLine _assemblyLine;
         private string _colour;
         private Action<string> _updateUI;
+        private Action<string> _updateSprayUI;
         private Action _onComplete;
 
-        public BuildCarCommand(CarAssemblyLine assemblyLine, string colour, Action<string> updateUI, Action onComplete)
+        public BuildCarCommand(CarAssemblyLine assemblyLine, string colour, Action<string> updateUI, Action<string> updateSprayUI, Action onComplete)
         {
             _assemblyLine = assemblyLine;
             _colour = colour;
             _updateUI = updateUI;
+            _updateSprayUI = updateSprayUI; 
             _onComplete = onComplete;
 
         }
 
         public override void Execute() 
         {
-            _assemblyLine.ProcessOrder(_colour,_updateUI);
+            _assemblyLine.ProcessOrder(_colour,_updateUI,_updateSprayUI);
             _onComplete?.Invoke();
 
         }

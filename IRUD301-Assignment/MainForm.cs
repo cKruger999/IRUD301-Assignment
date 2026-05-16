@@ -48,6 +48,7 @@ namespace IRUD301_Assignment
                     _carLine,
                     selectedColour,
                     (status) => UpdateUIThreadSafe(lblCarStatus, status), // Updates the status label
+                    (sprayStatus) => UpdateUIThreadSafe(lblSprayboothStatus, sprayStatus), // Updates the spray status label
                     () => VehicleCompleted("Car")                         // Triggers when the command finishes
                 );
 
@@ -67,6 +68,7 @@ namespace IRUD301_Assignment
                     _minibusLine,
                     selectedColour,
                     (status) => UpdateUIThreadSafe(lblMinibusStatus, status), // Updates the status label
+                    (sprayStatus) => UpdateUIThreadSafe(lblSprayboothStatus, sprayStatus), // Updates the spray status label
                     () => VehicleCompleted("Minibus")                         // Triggers when the command finishes
                 );
 
@@ -103,7 +105,6 @@ namespace IRUD301_Assignment
             }
         }
 
-        // 5. Thread-Safe UI Update Helper
         public void UpdateUIThreadSafe(Label labelToUpdate, string text)
         {
             if (labelToUpdate.InvokeRequired)

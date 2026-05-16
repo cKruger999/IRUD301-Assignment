@@ -25,7 +25,6 @@ namespace IRUD301_Assignment
             _isMinibusLineRunning = true;
             await Task.Run(() =>
             {
-                // 3. Use TryDequeue safely
                 while (_minibusOrdersQueue.TryDequeue(out CommandBase currentOrder))
                 {
                     currentOrder.Execute();
