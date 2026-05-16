@@ -28,7 +28,6 @@ namespace IRUD301_Assignment
         {
             _assemblyLine.ProcessOrder(_colour,_updateUI,_updateSprayUI);
             _onComplete?.Invoke();
-
         }
     }
 }

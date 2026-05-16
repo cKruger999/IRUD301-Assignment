@@ -40,6 +40,13 @@
             this.lblSprayboothStatus = new System.Windows.Forms.Label();
             this.lblMinibusStatus = new System.Windows.Forms.Label();
             this.lblCarStatus = new System.Windows.Forms.Label();
+            this.lblCarsCompletedHead = new System.Windows.Forms.Label();
+            this.lblMinibusCompletedHead = new System.Windows.Forms.Label();
+            this.lblCarQueueHead = new System.Windows.Forms.Label();
+            this.MinibusQueue = new System.Windows.Forms.Label();
+            this.lblCarStatusHead = new System.Windows.Forms.Label();
+            this.lblMinibusStatusHead = new System.Windows.Forms.Label();
+            this.lnlSprayboothStatusHead = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rbBlackLUX1000
@@ -88,7 +95,7 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(151, 52);
+            this.btnOrder.Location = new System.Drawing.Point(33, 125);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(75, 23);
             this.btnOrder.TabIndex = 4;
@@ -98,7 +105,7 @@
             // lblCarQueue
             // 
             this.lblCarQueue.AutoSize = true;
-            this.lblCarQueue.Location = new System.Drawing.Point(250, 157);
+            this.lblCarQueue.Location = new System.Drawing.Point(233, 166);
             this.lblCarQueue.Name = "lblCarQueue";
             this.lblCarQueue.Size = new System.Drawing.Size(55, 13);
             this.lblCarQueue.TabIndex = 5;
@@ -107,7 +114,7 @@
             // lblMinibusQueue
             // 
             this.lblMinibusQueue.AutoSize = true;
-            this.lblMinibusQueue.Location = new System.Drawing.Point(468, 157);
+            this.lblMinibusQueue.Location = new System.Drawing.Point(468, 166);
             this.lblMinibusQueue.Name = "lblMinibusQueue";
             this.lblMinibusQueue.Size = new System.Drawing.Size(75, 13);
             this.lblMinibusQueue.TabIndex = 6;
@@ -116,7 +123,7 @@
             // lblCarsCompleted
             // 
             this.lblCarsCompleted.AutoSize = true;
-            this.lblCarsCompleted.Location = new System.Drawing.Point(250, 62);
+            this.lblCarsCompleted.Location = new System.Drawing.Point(233, 81);
             this.lblCarsCompleted.Name = "lblCarsCompleted";
             this.lblCarsCompleted.Size = new System.Drawing.Size(78, 13);
             this.lblCarsCompleted.TabIndex = 7;
@@ -125,7 +132,7 @@
             // lblMinibusesCompleted
             // 
             this.lblMinibusesCompleted.AutoSize = true;
-            this.lblMinibusesCompleted.Location = new System.Drawing.Point(468, 60);
+            this.lblMinibusesCompleted.Location = new System.Drawing.Point(468, 81);
             this.lblMinibusesCompleted.Name = "lblMinibusesCompleted";
             this.lblMinibusesCompleted.Size = new System.Drawing.Size(104, 13);
             this.lblMinibusesCompleted.TabIndex = 8;
@@ -152,15 +159,92 @@
             // lblCarStatus
             // 
             this.lblCarStatus.AutoSize = true;
-            this.lblCarStatus.Location = new System.Drawing.Point(250, 260);
+            this.lblCarStatus.Location = new System.Drawing.Point(233, 260);
             this.lblCarStatus.Name = "lblCarStatus";
             this.lblCarStatus.Size = new System.Drawing.Size(53, 13);
             this.lblCarStatus.TabIndex = 11;
             this.lblCarStatus.Text = "CarStatus";
             // 
+            // lblCarsCompletedHead
+            // 
+            this.lblCarsCompletedHead.AutoSize = true;
+            this.lblCarsCompletedHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblCarsCompletedHead.Location = new System.Drawing.Point(232, 29);
+            this.lblCarsCompletedHead.Name = "lblCarsCompletedHead";
+            this.lblCarsCompletedHead.Size = new System.Drawing.Size(150, 24);
+            this.lblCarsCompletedHead.TabIndex = 12;
+            this.lblCarsCompletedHead.Text = "Cars Completed:";
+            // 
+            // lblMinibusCompletedHead
+            // 
+            this.lblMinibusCompletedHead.AutoSize = true;
+            this.lblMinibusCompletedHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblMinibusCompletedHead.Location = new System.Drawing.Point(467, 29);
+            this.lblMinibusCompletedHead.Name = "lblMinibusCompletedHead";
+            this.lblMinibusCompletedHead.Size = new System.Drawing.Size(198, 24);
+            this.lblMinibusCompletedHead.TabIndex = 13;
+            this.lblMinibusCompletedHead.Text = "Minibuses Completed:";
+            // 
+            // lblCarQueueHead
+            // 
+            this.lblCarQueueHead.AutoSize = true;
+            this.lblCarQueueHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblCarQueueHead.Location = new System.Drawing.Point(232, 125);
+            this.lblCarQueueHead.Name = "lblCarQueueHead";
+            this.lblCarQueueHead.Size = new System.Drawing.Size(103, 24);
+            this.lblCarQueueHead.TabIndex = 14;
+            this.lblCarQueueHead.Text = "Car Queue";
+            // 
+            // MinibusQueue
+            // 
+            this.MinibusQueue.AutoSize = true;
+            this.MinibusQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.MinibusQueue.Location = new System.Drawing.Point(467, 125);
+            this.MinibusQueue.Name = "MinibusQueue";
+            this.MinibusQueue.Size = new System.Drawing.Size(145, 24);
+            this.MinibusQueue.TabIndex = 15;
+            this.MinibusQueue.Text = "Minibus Queue:";
+            // 
+            // lblCarStatusHead
+            // 
+            this.lblCarStatusHead.AutoSize = true;
+            this.lblCarStatusHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblCarStatusHead.Location = new System.Drawing.Point(233, 228);
+            this.lblCarStatusHead.Name = "lblCarStatusHead";
+            this.lblCarStatusHead.Size = new System.Drawing.Size(99, 24);
+            this.lblCarStatusHead.TabIndex = 16;
+            this.lblCarStatusHead.Text = "Car Status:";
+            // 
+            // lblMinibusStatusHead
+            // 
+            this.lblMinibusStatusHead.AutoSize = true;
+            this.lblMinibusStatusHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblMinibusStatusHead.Location = new System.Drawing.Point(467, 228);
+            this.lblMinibusStatusHead.Name = "lblMinibusStatusHead";
+            this.lblMinibusStatusHead.Size = new System.Drawing.Size(136, 24);
+            this.lblMinibusStatusHead.TabIndex = 17;
+            this.lblMinibusStatusHead.Text = "Minibus Status:";
+            // 
+            // lnlSprayboothStatusHead
+            // 
+            this.lnlSprayboothStatusHead.AutoSize = true;
+            this.lnlSprayboothStatusHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lnlSprayboothStatusHead.Location = new System.Drawing.Point(325, 304);
+            this.lnlSprayboothStatusHead.Name = "lnlSprayboothStatusHead";
+            this.lnlSprayboothStatusHead.Size = new System.Drawing.Size(166, 24);
+            this.lnlSprayboothStatusHead.TabIndex = 18;
+            this.lnlSprayboothStatusHead.Text = "Spraybooth Status:";
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(701, 516);
+            this.Controls.Add(this.lnlSprayboothStatusHead);
+            this.Controls.Add(this.lblMinibusStatusHead);
+            this.Controls.Add(this.lblCarStatusHead);
+            this.Controls.Add(this.MinibusQueue);
+            this.Controls.Add(this.lblCarQueueHead);
+            this.Controls.Add(this.lblMinibusCompletedHead);
+            this.Controls.Add(this.lblCarsCompletedHead);
             this.Controls.Add(this.lblCarStatus);
             this.Controls.Add(this.lblMinibusStatus);
             this.Controls.Add(this.lblSprayboothStatus);
@@ -193,5 +277,12 @@
         private System.Windows.Forms.Label lblSprayboothStatus;
         private System.Windows.Forms.Label lblMinibusStatus;
         private System.Windows.Forms.Label lblCarStatus;
+        private System.Windows.Forms.Label lblCarsCompletedHead;
+        private System.Windows.Forms.Label lblMinibusCompletedHead;
+        private System.Windows.Forms.Label lblCarQueueHead;
+        private System.Windows.Forms.Label MinibusQueue;
+        private System.Windows.Forms.Label lblCarStatusHead;
+        private System.Windows.Forms.Label lblMinibusStatusHead;
+        private System.Windows.Forms.Label lnlSprayboothStatusHead;
     }
 }

@@ -43,7 +43,6 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackLUX1000.Checked ? "Black" : "White";
 
-                // No more lambdas! Just a clean list of the methods we want to use.
                 CommandBase newCarOrder = new BuildCarCommand(_carLine, selectedColour, UpdateCarStatus, UpdateSprayboothStatus, CarFinished);
 
                 _hq.PlaceCarOrder(newCarOrder);
@@ -57,7 +56,7 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackMV500.Checked ? "Black" : "White";
 
-                // Same here, passing the specific minibus methods, plus the shared spraybooth method.
+                // Passing the specific minibus methods
                 CommandBase newMinibusOrder = new BuildMinibusCommand(_minibusLine, selectedColour, UpdateMinibusStatus, UpdateSprayboothStatus, MinibusFinished);
 
                 _hq.PlaceMinibusOrder(newMinibusOrder);
