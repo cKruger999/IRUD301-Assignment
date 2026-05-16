@@ -43,14 +43,8 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackLUX1000.Checked ? "Black" : "White";
 
-                // CHANGED HERE: We now pass the UI update lambda AND the completion method
-                CommandBase newCarOrder = new BuildCarCommand(
-                    _carLine,
-                    selectedColour,
-                    (status) => UpdateUIThreadSafe(lblCarStatus, status), // Updates the status label
-                    (sprayStatus) => UpdateUIThreadSafe(lblSprayboothStatus, sprayStatus), // Updates the spray status label
-                    () => VehicleCompleted("Car")                         // Triggers when the command finishes
-                );
+                // No more lambdas! Just a clean list of the methods we want to use.
+                CommandBase newCarOrder = new BuildCarCommand(_carLine, selectedColour, UpdateCarStatus, UpdateSprayboothStatus, CarFinished);
 
                 _hq.PlaceCarOrder(newCarOrder);
 
@@ -63,14 +57,8 @@ namespace IRUD301_Assignment
             {
                 string selectedColour = rbBlackMV500.Checked ? "Black" : "White";
 
-                // CHANGED HERE: We now pass the UI update lambda AND the completion method
-                CommandBase newMinibusOrder = new BuildMinibusCommand(
-                    _minibusLine,
-                    selectedColour,
-                    (status) => UpdateUIThreadSafe(lblMinibusStatus, status), // Updates the status label
-                    (sprayStatus) => UpdateUIThreadSafe(lblSprayboothStatus, sprayStatus), // Updates the spray status label
-                    () => VehicleCompleted("Minibus")                         // Triggers when the command finishes
-                );
+                // Same here, passing the specific minibus methods, plus the shared spraybooth method.
+                CommandBase newMinibusOrder = new BuildMinibusCommand(_minibusLine, selectedColour, UpdateMinibusStatus, UpdateSprayboothStatus, MinibusFinished);
 
                 _hq.PlaceMinibusOrder(newMinibusOrder);
 
@@ -115,6 +103,35 @@ namespace IRUD301_Assignment
             {
                 labelToUpdate.Text = text;
             }
+        }
+        // --- Simple Pipe Methods for the UI Text ---
+
+        private void UpdateCarStatus(string message)
+        {
+            UpdateUIThreadSafe(lblCarStatus, message);
+        }
+
+        private void UpdateMinibusStatus(string message)
+        {
+            UpdateUIThreadSafe(lblMinibusStatus, message);
+        }
+
+        // Both commands can share this one method since there is only one spraybooth!
+        private void UpdateSprayboothStatus(string message)
+        {
+            UpdateUIThreadSafe(lblSprayboothStatus, message);
+        }
+
+        // --- Simple Methods for when the vehicles finish ---
+
+        private void CarFinished()
+        {
+            VehicleCompleted("Car");
+        }
+
+        private void MinibusFinished()
+        {
+            VehicleCompleted("Minibus");
         }
     }
 }
