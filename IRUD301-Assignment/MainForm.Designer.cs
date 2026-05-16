@@ -47,10 +47,10 @@
             this.rbBlackLUX1000.AutoSize = true;
             this.rbBlackLUX1000.Location = new System.Drawing.Point(33, 12);
             this.rbBlackLUX1000.Name = "rbBlackLUX1000";
-            this.rbBlackLUX1000.Size = new System.Drawing.Size(71, 17);
+            this.rbBlackLUX1000.Size = new System.Drawing.Size(100, 17);
             this.rbBlackLUX1000.TabIndex = 0;
             this.rbBlackLUX1000.TabStop = true;
-            this.rbBlackLUX1000.Text = "Black Car";
+            this.rbBlackLUX1000.Text = "Black LUX1000";
             this.rbBlackLUX1000.UseVisualStyleBackColor = true;
             // 
             // rbWhiteLUX1000
@@ -58,10 +58,10 @@
             this.rbWhiteLUX1000.AutoSize = true;
             this.rbWhiteLUX1000.Location = new System.Drawing.Point(33, 35);
             this.rbWhiteLUX1000.Name = "rbWhiteLUX1000";
-            this.rbWhiteLUX1000.Size = new System.Drawing.Size(72, 17);
+            this.rbWhiteLUX1000.Size = new System.Drawing.Size(101, 17);
             this.rbWhiteLUX1000.TabIndex = 1;
             this.rbWhiteLUX1000.TabStop = true;
-            this.rbWhiteLUX1000.Text = "White Car";
+            this.rbWhiteLUX1000.Text = "White LUX1000";
             this.rbWhiteLUX1000.UseVisualStyleBackColor = true;
             // 
             // rbBlackMV500
@@ -69,10 +69,10 @@
             this.rbBlackMV500.AutoSize = true;
             this.rbBlackMV500.Location = new System.Drawing.Point(33, 58);
             this.rbBlackMV500.Name = "rbBlackMV500";
-            this.rbBlackMV500.Size = new System.Drawing.Size(71, 17);
+            this.rbBlackMV500.Size = new System.Drawing.Size(89, 17);
             this.rbBlackMV500.TabIndex = 2;
             this.rbBlackMV500.TabStop = true;
-            this.rbBlackMV500.Text = "Black MV";
+            this.rbBlackMV500.Text = "Black MV500";
             this.rbBlackMV500.UseVisualStyleBackColor = true;
             // 
             // rbWhiteMV500
@@ -80,10 +80,10 @@
             this.rbWhiteMV500.AutoSize = true;
             this.rbWhiteMV500.Location = new System.Drawing.Point(33, 81);
             this.rbWhiteMV500.Name = "rbWhiteMV500";
-            this.rbWhiteMV500.Size = new System.Drawing.Size(93, 17);
+            this.rbWhiteMV500.Size = new System.Drawing.Size(90, 17);
             this.rbWhiteMV500.TabIndex = 3;
             this.rbWhiteMV500.TabStop = true;
-            this.rbWhiteMV500.Text = "White Minivan";
+            this.rbWhiteMV500.Text = "White MV500";
             this.rbWhiteMV500.UseVisualStyleBackColor = true;
             // 
             // btnOrder

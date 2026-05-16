@@ -13,7 +13,7 @@ namespace IRUD301_Assignment
     {
         private static SprayBooth _instance;
         private static object _lockThis = new object();
-
+        private static object _paintLock = new object(); // ensures one at a time
         public static SprayBooth GetInstance()
         {
             if (_instance == null)
@@ -32,19 +32,22 @@ namespace IRUD301_Assignment
 
         public void Paint(Automobile automobile, string colour, Action<string> updateUI)
         {
-            if (automobile is Car)
+            lock (_paintLock)
             {
-                updateUI($"Spraying {colour} LUX1000");
-                Thread.Sleep(5000);
-            }
-            else
-            {
-                updateUI($"Spraying {colour} MV500");
-                Thread.Sleep(7000);
-            }
+                if (automobile is Car)
+                {
+                    updateUI($"Spraying {colour} LUX1000");
+                    Thread.Sleep(5000);
+                }
+                else
+                {
+                    updateUI($"Spraying {colour} MV500");
+                    Thread.Sleep(7000);
+                }
 
-            automobile.Colour = colour;
-            updateUI("Idle");
+                automobile.Colour = colour;
+                updateUI("Idle");
+            }
         }
     }
 }
