@@ -16,14 +16,14 @@ namespace IRUD301_Assignment
         public override Automobile AssembleAutomobile(string colour, Action<string> updateUI)
         {
             string modelName = "LUX1000";
+            //requests parts from abstract factory method
             updateUI($"Creating {colour} {modelName} Chassis");
-
             Chassis myChassis = _partsFactory.CreateChassis();
+            //returns a string to the Mainform for display using Action class
             updateUI($"Creating {colour} {modelName} Shell");
-
             Shell myShell = _partsFactory.CreateShell();
+            //Adds 4 wheels to a list
             List<Wheel> myWheels = new List<Wheel>();
-
             for (int i = 0; i < 4; i++)
             {
                 string wheelPosition = "";
@@ -37,7 +37,7 @@ namespace IRUD301_Assignment
             }
             updateUI($"Creating {colour} {modelName} Trim");
             Trim myTrim = _partsFactory.CreateTrim();
-
+            //Adds it to a car class
             Car finishedCar = new Car(myChassis, myShell, myWheels, myTrim);
             updateUI($"{modelName} Assembly");
             Thread.Sleep(2000);

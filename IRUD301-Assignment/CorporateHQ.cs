@@ -1,60 +1,62 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 //Invoker
 namespace IRUD301_Assignment
 {
     public class CorporateHQ
     {
+        // --- CAR ASSEMBLY QUEUE ---
 
-        private ConcurrentQueue<CommandBase> _minibusOrdersQueue = new ConcurrentQueue<CommandBase>();
-        private bool _isMinibusLineRunning = false;
-
-        public void PlaceMinibusOrder(CommandBase command)
-        {
-            _minibusOrdersQueue.Enqueue(command);
-            if (!_isMinibusLineRunning)
-                ProcessMinibusOrdersInBackground();
-        }
-
-        private async void ProcessMinibusOrdersInBackground()
-        {
-            _isMinibusLineRunning = true;
-            await Task.Run(() =>
-            {
-                while (_minibusOrdersQueue.TryDequeue(out CommandBase currentOrder))
-                {
-                    currentOrder.Execute();
-                }
-            });
-            _isMinibusLineRunning = false;
-        }
-
-        
-        private ConcurrentQueue<CommandBase> _carOrdersQueue = new ConcurrentQueue<CommandBase>();
+        private Queue<CommandBase> _carOrdersQueue = new Queue<CommandBase>();
         private bool _isCarLineRunning = false;
 
         public void PlaceCarOrder(CommandBase command)
         {
             _carOrdersQueue.Enqueue(command);
-            if (!_isCarLineRunning)
-                ProcessCarOrdersInBackground();
+
+            // If the assembly line is in idle, start
+            if (_isCarLineRunning == false)
+            {
+                _isCarLineRunning = true;
+
+                Task.Run(() =>
+                {
+                    while (_carOrdersQueue.Count > 0)
+                    {
+                        CommandBase currentOrder = _carOrdersQueue.Dequeue();
+                        currentOrder.Execute();
+                    }
+                    _isCarLineRunning = false;
+                });
+            }
         }
 
-        private async void ProcessCarOrdersInBackground()
+
+        // --- MINIBUS ASSEMBLY QUEUE ---
+
+        private Queue<CommandBase> _minibusOrdersQueue = new Queue<CommandBase>();
+        private bool _isMinibusLineRunning = false;
+
+        public void PlaceMinibusOrder(CommandBase command)
         {
-            _isCarLineRunning = true;
-            await Task.Run(() =>
+            _minibusOrdersQueue.Enqueue(command);
+
+            if (_isMinibusLineRunning == false)
             {
-                while (_carOrdersQueue.TryDequeue(out CommandBase currentOrder))
+                _isMinibusLineRunning = true;
+
+                Task.Run(() =>
                 {
-                    currentOrder.Execute();
-                }
-            });
-            _isCarLineRunning = false;
+                    while (_minibusOrdersQueue.Count > 0)
+                    {
+                        CommandBase currentOrder = _minibusOrdersQueue.Dequeue();
+                        currentOrder.Execute();
+                    }
+
+                    _isMinibusLineRunning = false;
+                });
+            }
         }
     }
 }
